@@ -9,11 +9,11 @@ system packages are upgraded and then reboot into the new kernel:
 Start by cloning the OpenStack-Ansible repository and changing into the
 repository root directory:
 
-   .. code-block:: bash
+   .. code-block:: console
 
-       $ git clone https://github.com/openstack/openstack-ansible \
+       git clone https://github.com/openstack/openstack-ansible \
            /opt/openstack-ansible
-       $ cd /opt/openstack-ansible
+       cd /opt/openstack-ansible
 
 
 Rebuilding an AIO
@@ -24,18 +24,18 @@ isn't always practical. As such the following may be executed instead:
 
    .. code-block:: bash
 
-       $ # Move to the playbooks directory.
-       $ cd /opt/openstack-ansible/playbooks
+       # Move to the playbooks directory.
+       cd /opt/openstack-ansible/playbooks
 
-       $ # Destroy all of the running containers.
-       $ openstack-ansible lxc-containers-destroy.yml
+       # Destroy all of the running containers.
+       openstack-ansible lxc-containers-destroy.yml
 
-       $ # On the host stop all of the services that run locally and not
-       $ #  within a container.
-       $ for i in \
-              $(ls /etc/init \
-                | grep -e "nova\|swift\|neutron" \
-                | awk -F'.' '{print $1}'); do \
-           service $i stop; \
-         done
+       # On the host stop all of the services that run locally and not
+       #  within a container.
+       for i in \
+            $(ls /etc/init \
+              | grep -e "nova\|swift\|neutron" \
+              | awk -F'.' '{print $1}'); do \
+         service $i stop; \
+       done
 
