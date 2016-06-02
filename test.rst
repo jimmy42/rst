@@ -3,7 +3,7 @@ system packages are upgraded and then reboot into the new kernel:
 
    .. code-block:: shell-session
 
-       # apt-get dist-upgrade
+       root@ubuntu14.04:~# apt-get dist-upgrade
        # reboot
 
 Start by cloning the OpenStack-Ansible repository and changing into the
