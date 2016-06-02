@@ -1,3 +1,21 @@
+When building an AIO on a new server, it is recommended that all
+system packages are upgraded and then reboot into the new kernel:
+
+   .. code-block:: shell-session
+
+       # apt-get dist-upgrade
+       # reboot
+
+Start by cloning the OpenStack-Ansible repository and changing into the
+repository root directory:
+
+   .. code-block:: bash
+
+       $ git clone https://github.com/openstack/openstack-ansible \
+           /opt/openstack-ansible
+       $ cd /opt/openstack-ansible
+
+
 Rebuilding an AIO
 -----------------
 Sometimes it may be useful to destroy all the containers and rebuild the AIO.
